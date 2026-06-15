@@ -6,6 +6,14 @@ Country List App hadir dengan antarmuka yang simpel namun responsif, mempermudah
 
 ---
 
+## 🖼️ Tampilan Aplikasi
+
+Country List App 
+
+<img width="962" height="1029" alt="Country List App" src="https://github.com/user-attachments/assets/0aab21db-a632-4c32-b6cf-804c0e225298" />
+
+---
+
 ## ✨ Fitur Utama
 
 ### 🔐 Autentikasi Pengguna (Fake Login)
