@@ -39,6 +39,9 @@ class AuthController extends GetxController {
   Future<void> logout() async {
     await sharedPreferencesService.logout();
 
+    usernameController.clear();
+    passwordController.clear();
+
     Get.offAllNamed(AppRoutes.login);
   }
 
