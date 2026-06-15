@@ -10,7 +10,7 @@ Country List App hadir dengan antarmuka yang simpel namun responsif, mempermudah
 
 Country List App 
 
-<img width="962" height="1029" alt="Country List App" src="https://github.com/user-attachments/assets/0aab21db-a632-4c32-b6cf-804c0e225298" />
+<img width="962" height="1029" alt="Country List App" src="https://github.com/user-attachments/assets/7e9efffb-a7a1-459f-bf1b-251df74b355d" />
 
 ---
 
