@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
-  final SharedPreferencesService sharedPreferencesService = SharedPreferencesService();
+  final SharedPreferencesService sharedPreferencesService =
+      SharedPreferencesService();
 
   final usernameController = TextEditingController();
-
   final passwordController = TextEditingController();
 
   final isLoading = false.obs;
+  final isPasswordHidden = true.obs;
 
   Future<void> login() async {
     try {
@@ -43,6 +44,10 @@ class AuthController extends GetxController {
 
   Future<bool> checkLogin() async {
     return await sharedPreferencesService.isLoggedIn();
+  }
+
+  void togglePasswordVisibility() {
+    isPasswordHidden.value = !isPasswordHidden.value;
   }
 
   @override

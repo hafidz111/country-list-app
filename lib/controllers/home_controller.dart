@@ -1,40 +1,30 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'dart:async';
+
 import '../models/country_model.dart';
 import '../services/api_service.dart';
 
 class HomeController extends GetxController {
   final ApiService apiService = ApiService();
-
   final countries = <CountryModel>[].obs;
-
   final isLoading = false.obs;
-
   final isLoadMore = false.obs;
-
   final searchKeyword = ''.obs;
-
   late Worker searchWorker;
-
-  final scrollController = ScrollController();
-
   int offset = 0;
-
   final int limit = 20;
-
   bool hasMore = true;
 
   final searchController = TextEditingController();
+  final scrollController = ScrollController();
 
   @override
   void onInit() {
     super.onInit();
-
     fetchCountries();
-
     setupSearch();
-
     setupPagination();
   }
 
@@ -60,7 +50,6 @@ class HomeController extends GetxController {
   Future<void> fetchCountries() async {
     try {
       isLoading.value = true;
-
       offset = 0;
 
       final result = await apiService.getCountries(

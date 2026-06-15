@@ -17,11 +17,8 @@ class CountryTile extends StatelessWidget {
           width: 60,
           height: 40,
           fit: BoxFit.cover,
-          placeholder: (_, __) => Container(
-            width: 60,
-            height: 40,
-            color: Colors.grey[300],
-          ),
+          placeholder: (_, __) =>
+              Container(width: 60, height: 40, color: Colors.grey[300]),
           errorWidget: (_, __, ___) => const Icon(Icons.flag),
         ),
         title: Text(country.name),

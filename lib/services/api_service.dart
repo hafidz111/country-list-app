@@ -6,19 +6,17 @@ class ApiService {
   late Dio dio;
 
   ApiService() {
-    dio = Dio(
-      BaseOptions(
-        baseUrl: ApiConstants.baseUrl,
+    dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          final key = ApiConstants.apiKey;
+          options.headers["Authorization"] = "Bearer $key";
+          return handler.next(options);
+        },
       ),
     );
-    
-    dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) {
-        final key = ApiConstants.apiKey;
-        options.headers["Authorization"] = "Bearer $key";
-        return handler.next(options);
-      },
-    ));
   }
 
   Future<List<CountryModel>> getCountries({
